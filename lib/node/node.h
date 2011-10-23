@@ -32,3 +32,5 @@ Node *nd_prepend(Node *nd, Node *new_head);
 // Get the nth parent or child of a node, or the head or the tail if the offset is too large
 Node *nd_get_nth(Node *nd, int index);
 
+// Assuming a head node (no node->head), reverse the list
+Node *nd_reverse(Node *nd);
