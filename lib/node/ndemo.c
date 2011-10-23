@@ -27,6 +27,17 @@ int main(int argc, char *argv){
 		fputs(tmp->data, stdout);
 	}
 
+	Node *first_msg = msg_array->tail;
+	msg_array->tail = NULL;
+	first_msg->head = NULL;
+	first_msg = nd_reverse(first_msg);
+
+	msg_array->tail = first_msg;
+	first_msg->head = msg_array;
+	nd_foreach_child(tmp, msg_array){
+		fputs(tmp->data, stdout);
+	}
+
 	nd_destroy(msg_array);
 
 	return 0;
